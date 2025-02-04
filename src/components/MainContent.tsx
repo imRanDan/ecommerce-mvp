@@ -33,7 +33,18 @@ const MainContent = () => {
       });
   }, [currentPage, keyword]);
 
-  getFilteredProducts;
+  const getFilteredProducts = () => {
+    let filteredProducts = products;
+
+    if (selectedCategory) {
+      filteredProducts = filteredProducts.filter(
+        (product) => product.category === selectedCategory
+      );
+      // console.log(filteredProducts);
+    }
+  };
+
+  getFilteredProducts();
 
   return (
     <section className="xl:w-[55rem] sm:w-[40rem] xs:w-[20rem] p-5">
