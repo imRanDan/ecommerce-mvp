@@ -44,7 +44,28 @@ const MainContent = () => {
     }
   };
 
-  getFilteredProducts();
+  if (minPrice !== undefined) {
+    filteredProducts = filteredProducts.filter(
+      (product => product.price >= minPrice
+    );
+  }
+
+  if (maxProce !== undefined) {
+    filteredProducts = filteredProducts.filter((product) => product.price <= maxPrice)
+  }
+
+  if (searchQuery) {
+    filteredProducts = filteredProducts.filter((product) => product.title.toLowerCase().includes(searchQuery.toLowerCase())
+  )
+  }
+
+  switch(filter) {
+    case "expensive"
+  }
+};
+
+
+  const filteredProducts = getFilteredProducts();
 
   return (
     <section className="xl:w-[55rem] sm:w-[40rem] xs:w-[20rem] p-5">
